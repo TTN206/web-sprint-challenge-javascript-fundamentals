@@ -59,12 +59,13 @@ const zooAnimals = [
   displayNames will be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */ // .push
 
-  function animalNames(){
+  function animalNames(displayNames){
     let newArray = [];
     zooAnimals.forEach( item => newArray.push(`name: ${item.animal_name}, scientific: ${item.scientific_name}`)); 
-    return newArray;
+    console.log(newArray);
   }
- 
+  console.log(displayNames);
+  
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
   The zoo needs a list of all their animal's names converted to lower case. 
   Using lowerCaseNames use .map() to create a new array of strings with the animal's names in lowercase and return the new array. 
@@ -177,7 +178,7 @@ CuboidMaker.prototype.surfaceArea = function(){
 /* 🐴🐴🐴 Step 4: Create a new object that uses CuboidMaker 🐴🐴🐴
   Create an object called cuboid that uses the new keyword to use our CuboidMaker constructor
   Add properties and values of length: 4, width: 5, and height: 5 to cuboid. */
-  
+
 CuboidMaker.prototype = Object.create(CuboidMaker.prototype);
 const newCuboid = new CuboidMaker({length:4, width:5, height:5});
 console.log(newCuboid);
@@ -221,7 +222,7 @@ class CubeMaker extends CuboidMaker{
     return unicorn.length**3;
   }
   cubeSA(){
-    return unicorn.length*6**2;
+    return (unicorn.length*6)**2;
   }
 }
 // Cube	Volume = x³ Surface area = 6x²
